@@ -1,13 +1,13 @@
 <!-- File: /app/View/Posts/index.ctp -->
 
-<h1>Blog posts</h1>
-<p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
+<h1>Recentes</h1>
+<p><?php echo $this->Html->link('Adicionar postagem', array('action' => 'add')); ?></p>
 <table>
     <tr>
         <th>Id</th>
-        <th>Title</th>
-                <th>Actions</th>
-        <th>Created</th>
+        <th>Título</th>
+        <th>Ações</th>
+        <th>Publicado</th>
     </tr>
 
 <!-- Aqui é onde nós percorremos nossa matriz $posts, imprimindo
@@ -21,11 +21,11 @@ as informações dos posts -->
         </td>
         <td>
         <?php echo $this->Form->postLink(
-            'Delete',
+            'Deletar',
             array('action' => 'delete', $post['Post']['id']),
-            array('confirm' => 'Are you sure?'));
+            array('confirm' => 'Você tem certeza?'));
         ?>
-        <?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Post']['id']));?>
+        <?php echo $this->Html->link('Editar', array('action' => 'edit', $post['Post']['id']));?>
         </td>
         <td><?php echo $post['Post']['created']; ?></td>
     </tr>

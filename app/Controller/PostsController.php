@@ -110,7 +110,7 @@ class PostsController extends AppController {
 	    if ($this->Post->delete($id)) {
 
 	    	// mostrar uma mensagem de confirmação para o usuário
-	        $this->Session->setFlash('The post with id: ' . $id . ' has been deleted.'); 
+	        $this->Session->setFlash('A postagem com o ID: ' . $id . ' foi deletada.'); 
 	        $this->redirect(array('action' => 'index'));
 	    }
 	}
