@@ -8,6 +8,9 @@
 class PostsController extends AppController {
     public $helpers = array ('Html','Form');
     public $name = 'Posts';
+   
+
+
 
     // Listagem dos posts
     /*
@@ -23,6 +26,7 @@ class PostsController extends AppController {
 			do model Post. Nosso model Post está automaticamente disponível como $this->Post uma vez que seguimos as convenções de nomenclatura do Cake.
     	*/
     	$this->set('posts', $this->Post->find('all'));
+    	$this->set('title_for_layout', 'Photobox');
     }
 
     /*
@@ -68,7 +72,7 @@ class PostsController extends AppController {
 					mensagem e limpa a variável de sessão
 					correspondente.
             	*/
-                $this->Session->setFlash('Seu post foi salvo.');
+                $this->Session->setFlash('Sua postagem foi salva.');
 
                 /*                
 					O parâmetro array('action' => 'index') é
@@ -95,7 +99,7 @@ class PostsController extends AppController {
     	    $this->request->data = $this->Post->read();
     	} else {
     	    if ($this->Post->save($this->request->data)) {
-    	        $this->Session->setFlash('Seu post foi atualizado.');
+    	        $this->Session->setFlash('Sua postagem foi atualizada.');
     	        $this->redirect(array('action' => 'index'));
     	    }
     	}

@@ -14,3 +14,14 @@ INSERT INTO posts (title, body, created)
     VALUES ('A title once again', 'And the post body follows.', NOW());
 INSERT INTO posts (title, body, created)
     VALUES ('Title strikes back', 'This is really exciting! Not.', NOW());
+
+
+-- Criando a tabela de usuários
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    role VARCHAR(20),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
