@@ -1,0 +1,384 @@
+2015-11-14 19:53:32 Error: [MissingActionException] Action PostsController::display() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'display',
+)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-11-17 00:07:07 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /blogcakephp/User
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-17 00:07:15 Error: Fatal Error (1): Call to a member function allow() on null in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 9]
+2015-11-17 00:07:15 Error: [FatalErrorException] Call to a member function allow() on null
+Request URL: /blogcakephp/Users
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/renato/Do...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 00:07:21 Error: Fatal Error (1): Call to a member function allow() on null in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 9]
+2015-11-17 00:07:21 Error: [FatalErrorException] Call to a member function allow() on null
+Request URL: /blogcakephp/Users/add
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/renato/Do...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 00:07:30 Error: Fatal Error (1): Call to a member function allow() on null in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 9]
+2015-11-17 00:07:30 Error: [FatalErrorException] Call to a member function allow() on null
+Request URL: /blogcakephp/Users/add.ctp
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/renato/Do...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 00:07:37 Error: Fatal Error (1): Call to a member function allow() on null in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 9]
+2015-11-17 00:07:37 Error: [FatalErrorException] Call to a member function allow() on null
+Request URL: /blogcakephp/Users/add.html
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/renato/Do...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/renato/Do...', 9, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:02:18 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 75]
+2015-11-17 21:02:18 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /blogcakephp/users/login
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/home/renato/Do...', 75)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:10:00 Error: [MissingActionException] Action PagesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'index',
+)
+Request URL: /blogcakephp/Pages
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-11-17 21:10:14 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 75]
+2015-11-17 21:10:14 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /blogcakephp/Users
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/home/renato/Do...', 75)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:10:38 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 75]
+2015-11-17 21:10:38 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /blogcakephp/Users/add
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/home/renato/Do...', 75)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:10:46 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 75]
+2015-11-17 21:10:46 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /blogcakephp/Users/add.html
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/home/renato/Do...', 75)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:10:54 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/UsersController.php, line 75]
+2015-11-17 21:10:54 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /blogcakephp/Users/login
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/home/renato/Do...', 75)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/home/renato/Do...', 75, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 21:24:26 Error: [MissingViewException] View file "Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/index.ctp',
+)
+Request URL: /blogcakephp/users
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:01:15 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users/view
+Stack Trace:
+#0 [internal function]: UsersController->view()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:02:09 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users/view
+Stack Trace:
+#0 [internal function]: UsersController->view()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:03:58 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users/view
+Stack Trace:
+#0 [internal function]: UsersController->view()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:06:44 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users/view
+Stack Trace:
+#0 [internal function]: UsersController->view()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:08:20 Error: Fatal Error (1): Call to a member function link() on null in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/View/Posts/index.ctp, line 5]
+2015-11-17 22:08:20 Error: [FatalErrorException] Call to a member function link() on null
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/renato/Do...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/renato/Do...', 5, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/renato/Do...', 5, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:08:35 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/View/Posts/index.ctp, line 5]
+2015-11-17 22:08:35 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';'
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 5, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 5, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:11:34 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/View/Posts/index.ctp, line 5]
+2015-11-17 22:11:34 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';'
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 5, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 5, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:14:10 Error: Fatal Error (4): syntax error, unexpected 'App' (T_STRING), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 9]
+2015-11-17 22:14:10 Error: [FatalErrorException] syntax error, unexpected 'App' (T_STRING), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 9, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 9, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:14:41 Error: Fatal Error (4): syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:14:41 Error: [FatalErrorException] syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:15:03 Error: Fatal Error (4): syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:15:03 Error: [FatalErrorException] syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:15:06 Error: Fatal Error (4): syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:15:06 Error: [FatalErrorException] syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:18:11 Error: Fatal Error (4): syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:18:11 Error: [FatalErrorException] syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:19:46 Error: Fatal Error (4): syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:19:46 Error: [FatalErrorException] syntax error, unexpected '$Users' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:20:16 Error: Fatal Error (4): syntax error, unexpected '$Use3rs' (T_VARIABLE), expecting function (T_FUNCTION) in [/home/renato/Documentos/dev/htdocs/blogcakephp/app/Controller/PostsController.php, line 10]
+2015-11-17 22:20:16 Error: [FatalErrorException] syntax error, unexpected '$Use3rs' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/renato/Do...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/renato/Do...', 10, Array)
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-11-17 22:21:10 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/users/view
+Stack Trace:
+#0 [internal function]: UsersController->view()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:25:45 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/users
+Stack Trace:
+#0 [internal function]: UsersController->index()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:26:42 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users
+Stack Trace:
+#0 [internal function]: UsersController->index()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:26:57 Error: [NotFoundException] Invalid user
+Request URL: /blogcakephp/Users
+Stack Trace:
+#0 [internal function]: UsersController->index()
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-17 22:33:53 Error: [MissingViewException] View file "Users/edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/edit.ctp',
+)
+Request URL: /blogcakephp/users/edit/1
+Stack Trace:
+#0 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /home/renato/Documentos/dev/htdocs/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/htdocs/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-18 17:03:01 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /blogcakephp/
+Stack Trace:
+#0 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Model.php(3626): ConnectionManager::getDataSource('default')
+#3 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Model.php(3653): Model->setSource('posts')
+#5 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Model.php(3031): Model->getDataSource()
+#6 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Model/Model.php(3003): Model->_readDataSource('all', Array)
+#7 /home/renato/Documentos/dev/www/blogcakephp/app/Controller/PostsController.php(10): Model->find('all')
+#8 [internal function]: PostsController->index()
+#9 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#10 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#12 /home/renato/Documentos/dev/www/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 /home/renato/Documentos/dev/www/blogcakephp/index.php(41): require('/home/renato/Do...')
+#14 {main}
+2015-11-19 18:22:47 Error: [MissingControllerException] Controller class UsersControllerController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersControllerController',
+  'plugin' => NULL,
+)
+Request URL: /blogcakephp/UsersController/index
+Stack Trace:
+#0 /home/renato/Documentos/dev/www/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-19 18:28:28 Error: [MissingActionException] Action UsersController::q_edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'q_edit',
+)
+Request URL: /blogcakephp/Users/q_edit
+Stack Trace:
+#0 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /home/renato/Documentos/dev/www/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-11-28 17:11:07 Error: [MissingViewException] View file "Posts/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Posts/add.ctp',
+)
+Request URL: /blogcakephp/posts/add
+Stack Trace:
+#0 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/www/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-11-28 17:11:16 Error: [MissingViewException] View file "Posts/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Posts/add.ctp',
+)
+Request URL: /blogcakephp/posts/add
+Stack Trace:
+#0 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /home/renato/Documentos/dev/www/blogcakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /home/renato/Documentos/dev/www/blogcakephp/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
