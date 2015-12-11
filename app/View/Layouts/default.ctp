@@ -20,6 +20,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
@@ -27,8 +31,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->script('plugins/retina/retina.min');
+		//echo $this->Html->css('cake.generic');
+		echo $this->Html->css(array('bootstrap/bootstrap.min', 'vitality-red', 'font-awesome/css/font-awesome.min', 'plugins/owl-carousel/owl.carousel', 'plugins/owl-carousel/owl.theme', 'plugins/owl-carousel/owl.transitions', 'plugins/magnific-popup', 'plugins/background', 'plugins/animate' ));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -58,6 +63,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</p>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php
+		echo $this->Html->script(array('jquery', 'bootstrap.min')); 
+
+	?>
+	<?php// echo $this->element('sql_dump'); ?>
 </body>
 </html>
