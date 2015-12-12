@@ -40,9 +40,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body id="page-top">
-	<div id="container">
+	<!-- <div id="container"> -->
 		<!-- ***************** header block ***************** -->
-		<div id="header">
+		<!-- <div id="header"> -->
 			<!-- Navigation -->
 			<!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
 			<nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
@@ -81,45 +81,89 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				</div>
 				<!-- /.container -->
 			</nav>
-		</div> <!-- /header -->
+			<header style="background-image: url('img/bg-header2.jpg');">
+			    <div class="intro-content">
+			        <img src="img/photobox-logo.png" class="img-responsive img-centered" alt="">
+			        <div class="brand-name">PHOTOBOX</div>
+			        <hr class="colored">
+			        <div class="brand-name-subtext">Encontre tudo que você precisa para seus projetos criativos.</div>
+			    </div>
+			    <div class="scroll-down">
+			        <a class="btn page-scroll" href="#explorer"><i class="fa fa-angle-down fa-fw"></i></a>
+			    </div>
+			</header>
+	<!--	</div>  /header -->
 
 		<!-- ***************** content block ***************** -->
-		<div id="content">
-			<?php echo $this->Flash->render(); ?>
+		<!-- <div id="content"> -->
 
-			<?php echo $this->fetch('content'); ?>
-		</div> <!-- /content -->
+					<?php echo $this->Flash->render(); ?>
+
+					<?php echo $this->fetch('content'); ?>
+	<!--	</div>  /content -->
 
 		<!-- ***************** footer block ***************** -->
-		<div id="footer">
+		<!-- <div id="footer"> -->
+			<footer class="footer" style="background-image: url('img/bg-footer.jpg')">
+					<div class="container text-center">
+							<div class="row">
+									<div class="col-md-4 contact-details">
+											<h4><i class="fa fa-phone"></i> Ligue</h4>
+											<p>84 98892 0750</p>
+									</div>
+									<div class="col-md-4 contact-details">
+											<h4><i class="fa fa-map-marker"></i> Visite</h4>
+											<p>Tirol, 700
+													<br>Natal, RN, Brasil</p>
+									</div>
+									<div class="col-md-4 contact-details">
+											<h4><i class="fa fa-envelope"></i> Email</h4>
+											<p><a href="mailto:mail@example.com">mail@example.com</a>
+											</p>
+									</div>
+							</div>
+							<div class="row social">
+									<div class="col-lg-12">
+											<ul class="list-inline">
+													<li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+													</li>
+													<li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+													</li>
+													<li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+													</li>
+											</ul>
+									</div>
+							</div>
+							<div class="row copyright">
+									<div class="col-lg-12">
+											<p class="small">&copy; 2015</p>
+									</div>
+							</div>
+					</div>
+			</footer>
+	<!--	</div>  /footer -->
 
-		</div> <!-- /footer -->
-
-	</div> <!-- /container -->
+<!--	</div>  /container -->
 		<!-- Core Scripts -->
-	<?php
-		echo $this->Html->script(array('jquery', 'bootstrap.min'));
-	?>
 
-	<!-- <script src="assets/js/jquery.js"></script> -->
-	<!-- <script src="assets/js/bootstrap/bootstrap.min.js"></script> -->
+
+	 <script src="js/jquery.js"></script>
+	 <script src="js/bootstrap/bootstrap.min.js"></script>
 	<!-- Plugin Scripts -->
-	<script src="assets/js/plugins/jquery.easing.min.js"></script>
-	<script src="assets/js/plugins/classie.js"></script>
-	<script src="assets/js/plugins/cbpAnimatedHeader.js"></script>
-	<script src="assets/js/plugins/owl-carousel/owl.carousel.js"></script>
-	<script src="assets/js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/plugins/background/core.js"></script>
-	<script src="assets/js/plugins/background/transition.js"></script>
-	<script src="assets/js/plugins/background/background.js"></script>
-	<script src="assets/js/plugins/jquery.mixitup.js"></script>
-	<script src="assets/js/plugins/wow/wow.min.js"></script>
-	<script src="assets/js/contact_me.js"></script>
-	<script src="assets/js/plugins/jqBootstrapValidation.js"></script>
+	<script src="js/plugins/jquery.easing.min.js"></script>
+	<script src="js/plugins/classie.js"></script>
+	<script src="js/plugins/cbpAnimatedHeader.js"></script>
+	<script src="js/plugins/owl-carousel/owl.carousel.js"></script>
+	<script src="js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="js/plugins/background/core.js"></script>
+	<script src="js/plugins/background/transition.js"></script>
+	<script src="js/plugins/background/background.js"></script>
+	<script src="js/plugins/jquery.mixitup.js"></script>
+	<script src="js/plugins/wow/wow.min.js"></script>
+	<script src="js/contact_me.js"></script>
+	<script src="js/plugins/jqBootstrapValidation.js"></script>
 	<!-- Vitality Theme Scripts -->
-	<script src="assets/js/vitality.js"></script>
-	<!-- Style Switcher Scripts - Demo Purposes Only! -->
-	<script src="assets/demo/style.switcher.js"></script>
+	<script src="js/vitality.js"></script>
 	<!-- <?php// echo $this->element('sql_dump'); ?>  -->
 </body>
 </html>
