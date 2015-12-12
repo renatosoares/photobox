@@ -97,152 +97,24 @@
         <div class="row">
             <div class="col-lg-12">
                 <div id="portfoliolist">
-                    <div class="portfolio identity" data-cat="identity" href="#portfolioModal1" data-toggle="modal">
-                        <div class="portfolio-wrapper">
 
-                            <img src="img/portfolio/grid/identity/1.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Generic Inc.</a>
-                                    <span class="text-category">Brand Identity</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio web" data-cat="web" href="#portfolioModal2" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/web/1.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Brands</a>
-                                    <span class="text-category">Web Development</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal3" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/graphic/1.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Excellence</a>
-                                    <span class="text-category">Poster Design</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio web" data-cat="web" href="#portfolioModal4" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/web/2.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">YouTV</a>
-                                    <span class="text-category">Web Development</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal1" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/graphic/2.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Office Supplies</a>
-                                    <span class="text-category">Graphic Design</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio web" data-cat="web" href="#portfolioModal2" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/web/3.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Fooder</a>
-                                    <span class="text-category">Mobile App</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal3" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/graphic/3.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Mountain Tea</a>
-                                    <span class="text-category">Graphic Design</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal4" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/graphic/4.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Checkmark</a>
-                                    <span class="text-category">Graphic Design</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio identity" data-cat="identity" href="#portfolioModal1" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/identity/2.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Demish</a>
-                                    <span class="text-category">Brand Identity</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio web" data-cat="web" href="#portfolioModal2" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/web/4.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">OneRepublic</a>
-                                    <span class="text-category">Web Development</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
+                  <?php foreach ($posts as $post): ?>
+
                     <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal3" data-toggle="modal">
                         <div class="portfolio-wrapper">
                             <img src="img/portfolio/grid/graphic/5.jpg" alt="">
                             <div class="caption">
                                 <div class="caption-text">
-                                    <a class="text-title">Postable</a>
-                                    <span class="text-category">Graphic Design</span>
+                                  <?php    echo $this->Html->link( $post['Post']['title'], array( 'action' => 'view', $post['Post']['id']), array('class' => 'text-title') ); ?>
+                                    <!-- , 'class' => 'text-title' -->
+                                    <span class="text-category">Categoria ???</span>
                                 </div>
                                 <div class="caption-bg"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio identity" data-cat="identity" href="#portfolioModal4" data-toggle="modal">
-                        <div class="portfolio-wrapper">
-                            <img src="img/portfolio/grid/identity/3.jpg" alt="">
-                            <div class="caption">
-                                <div class="caption-text">
-                                    <a class="text-title">Simpli Nota</a>
-                                    <span class="text-category">Brand Identity</span>
-                                </div>
-                                <div class="caption-bg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <?php endforeach; ?>
+                </div> <!-- /portifolio list -->
             </div>
         </div>
     </div>
