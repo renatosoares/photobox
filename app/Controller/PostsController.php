@@ -6,12 +6,12 @@
 class PostsController extends AppController {
     public $helpers = array('Html', 'Form', 'Flash');
     public $components = array('Flash');
-    
+
 
     public function index() {
         $this->set('posts', $this->Post->find('all'));
         $this->loadModel('User');
-        $this->set('users', $this->User->find('all'));        
+        $this->set('users', $this->User->find('all'));
     }
 
     public function view($id) {
@@ -31,7 +31,7 @@ class PostsController extends AppController {
             //$this->Post->create();
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success(__('Your post has been saved.'));
+                $this->Flash->success(__('Sua postagem foi salva.'));
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Flash->error(__('Unable to add your post.'));
@@ -41,12 +41,12 @@ class PostsController extends AppController {
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
-    
+
         $post = $this->Post->findById($id);
         if (!$post) {
             throw new NotFoundException(__('Invalid post'));
         }
-    
+
         if ($this->request->is(array('post', 'put'))) {
             $this->Post->id = $id;
             if ($this->Post->save($this->request->data)) {
@@ -55,7 +55,7 @@ class PostsController extends AppController {
             }
             $this->Flash->error(__('Unable to update your post.'));
         }
-    
+
         if (!$this->request->data) {
             $this->request->data = $post;
         }
@@ -79,7 +79,7 @@ class PostsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    
+
     public function isAuthorized($user) {
         // All registered users can add posts
         if ($this->action === 'add') {
