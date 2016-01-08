@@ -27,6 +27,8 @@ class PostsController extends AppController {
     }
 
     public function add() {
+      $this->loadModel('Category');
+      $this->set('categories', $this->Category->find('all'));
         if ($this->request->is('post')) {
             //$this->Post->create();
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');

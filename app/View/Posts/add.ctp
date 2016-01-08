@@ -2,11 +2,15 @@
 
 <h1>Add Post</h1>
 <?php
-echo $this->Form->create('Post');
-echo $this->Form->input('category_id');
-echo $this->Form->input('title');
-echo $this->Form->input('body', array('rows' => '3'));
-echo $this->Form->input('keywords');
-echo $this->Form->input('urlImage');
-echo $this->Form->end('Save Post');
+foreach ($categories as $category):
+  $idCategorias[$category['Category']['id']] = $category['Category']['name'];
+endforeach;
+
+  echo $this->Form->create('Post');
+  echo $this->Form->select('category_id', $idCategorias);
+  echo $this->Form->input('title');
+  echo $this->Form->input('description', array('rows' => '2'));
+  echo $this->Form->input('keywords');
+  echo $this->Form->input('urlImage');
+  echo $this->Form->end('Save Post');
 ?>
