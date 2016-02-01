@@ -30,7 +30,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->script('plugins/retina/retina.min');
+
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css(array('bootstrap/bootstrap.min', 'vitality-red', 'font-awesome/css/font-awesome.min', 'plugins/owl-carousel/owl.carousel', 'plugins/owl-carousel/owl.theme', 'plugins/owl-carousel/owl.transitions', 'plugins/magnific-popup', 'plugins/background', 'plugins/animate' ));
 
@@ -145,12 +145,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 <!--	</div>  /container -->
 		<!-- Core Scripts -->
+<?php
+//echo $this->Html->css(array('bootstrap/bootstrap.min', 'vitality-red', 'font-awesome/css/font-awesome.min', 'plugins/owl-carousel/owl.carousel', 'plugins/owl-carousel/owl.theme', 'plugins/owl-carousel/owl.transitions', 'plugins/magnific-popup', 'plugins/background', 'plugins/animate' ));
+echo $this->Html->script(array('plugins/retina/retina.min', 'jquery', 'bootstrap/bootstrap.min', ));
+//echo $this->Html->script('plugins/retina/retina.min');
+
+?>
 
 
-	 <script src="js/jquery.js"></script>
-	 <script src="js/bootstrap/bootstrap.min.js"></script>
 	<!-- Plugin Scripts -->
-	<script src="js/plugins/jquery.easing.min.js"></script>
+	<!-- <script src="js/plugins/jquery.easing.min.js"></script>
 	<script src="js/plugins/classie.js"></script>
 	<script src="js/plugins/cbpAnimatedHeader.js"></script>
 	<script src="js/plugins/owl-carousel/owl.carousel.js"></script>
@@ -161,7 +165,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<script src="js/plugins/jquery.mixitup.js"></script>
 	<script src="js/plugins/wow/wow.min.js"></script>
 	<script src="js/contact_me.js"></script>
-	<script src="js/plugins/jqBootstrapValidation.js"></script>
+	<script src="js/plugins/jqBootstrapValidation.js"></script> -->
 	<!-- Vitality Theme Scripts -->
 	<script src="js/vitality.js"></script>
 	<!-- <?php// echo $this->element('sql_dump'); ?>  -->
