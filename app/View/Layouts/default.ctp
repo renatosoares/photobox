@@ -144,30 +144,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<!--	</div>  /footer -->
 
 <!--	</div>  /container -->
-		<!-- Core Scripts -->
+<!-- Core Scripts -->
 <?php
-//echo $this->Html->css(array('bootstrap/bootstrap.min', 'vitality-red', 'font-awesome/css/font-awesome.min', 'plugins/owl-carousel/owl.carousel', 'plugins/owl-carousel/owl.theme', 'plugins/owl-carousel/owl.transitions', 'plugins/magnific-popup', 'plugins/background', 'plugins/animate' ));
-echo $this->Html->script(array('plugins/retina/retina.min', 'jquery', 'bootstrap/bootstrap.min', ));
-//echo $this->Html->script('plugins/retina/retina.min');
-
+echo $this->Html->script(array('plugins/retina/retina.min', 'jquery', 'bootstrap/bootstrap.min', 'plugins/jquery.easing.min', 'plugins/classie', 'plugins/cbpAnimatedHeader', 'plugins/owl-carousel/owl.carousel', 'plugins/jquery.magnific-popup/jquery.magnific-popup.min', 'plugins/background/core', 'plugins/background/transition', 'plugins/background/background', 'plugins/jquery.mixitup', 'plugins/wow/wow.min', 'contact_me', 'plugins/jqBootstrapValidation', 'vitality'));
 ?>
 
-
-	<!-- Plugin Scripts -->
-	<!-- <script src="js/plugins/jquery.easing.min.js"></script>
-	<script src="js/plugins/classie.js"></script>
-	<script src="js/plugins/cbpAnimatedHeader.js"></script>
-	<script src="js/plugins/owl-carousel/owl.carousel.js"></script>
-	<script src="js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="js/plugins/background/core.js"></script>
-	<script src="js/plugins/background/transition.js"></script>
-	<script src="js/plugins/background/background.js"></script>
-	<script src="js/plugins/jquery.mixitup.js"></script>
-	<script src="js/plugins/wow/wow.min.js"></script>
-	<script src="js/contact_me.js"></script>
-	<script src="js/plugins/jqBootstrapValidation.js"></script> -->
-	<!-- Vitality Theme Scripts -->
-	<script src="js/vitality.js"></script>
 	<!-- <?php// echo $this->element('sql_dump'); ?>  -->
 </body>
 </html>
