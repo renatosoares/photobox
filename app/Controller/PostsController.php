@@ -32,6 +32,13 @@ class PostsController extends AppController {
         if ($this->request->is('post')) {
             //$this->Post->create();
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
+            $this->request->data['Post']['urlImage'] = array(
+                'name' => 'conference_schedule.jpg',
+                'type' => 'image/jpg',
+                'tmp_name' => '/var/tmp/phptestss',
+                'error' => 0,
+                'size' => 4613,
+            );
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success(__('Sua postagem foi salva.'));
                 return $this->redirect(array('action' => 'index'));
