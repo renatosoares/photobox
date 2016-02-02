@@ -81,9 +81,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				</div>
 				<!-- /.container -->
 			</nav>
-			<header style="background-image: url('img/bg-header2.jpg');">
+			<header style="background-image: url('<?php echo $this->webroot; ?>img/bg-header2.jpg');">
 			    <div class="intro-content">
-			        <img src="img/photobox-logo.png" class="img-responsive img-centered" alt="">
+			        <img src="<?php echo $this->webroot; ?>img/photobox-logo.png" class="img-responsive img-centered" alt="">
 			        <div class="brand-name">PHOTOBOX</div>
 			        <hr class="colored">
 			        <div class="brand-name-subtext">Encontre tudo que você precisa para seus projetos criativos.</div>
@@ -104,7 +104,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		<!-- ***************** footer block ***************** -->
 		<!-- <div id="footer"> -->
-			<footer class="footer" style="background-image: url('img/bg-footer.jpg')">
+			<footer class="footer" style="background-image: url('<?php echo $this->webroot; ?>img/bg-footer.jpg')">
 					<div class="container text-center">
 							<div class="row">
 									<div class="col-md-4 contact-details">
