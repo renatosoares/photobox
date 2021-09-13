@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  photobox-php:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: .
+      dockerfile: ./services/php/Dockerfile
+    container_name: photobox-php
+    restart: unless-stopped
+    working_dir: /var/www/${APP_FOLDER}
+    volumes:
+      - /var/www/${APP_FOLDER}:/var/www/${APP_FOLDER}
+      - ./services/php/usr/local/etc/php/conf.d/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - photobox
+
+  photobox-nginx:
+    image: nginx:alpine
+    container_name: photobox-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - /var/www/${APP_FOLDER}:/var/www/${APP_FOLDER}
+      - ./services/nginx/etc/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - photobox
+
+networks:
+  photobox:
+    driver: bridge
