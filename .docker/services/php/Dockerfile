@@ -25,8 +25,6 @@ RUN docker-php-ext-install mbstring exif pcntl bcmath gd
 # Get latest Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# RUN composer self-update
-
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
