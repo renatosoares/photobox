@@ -15,12 +15,14 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip
+RUN apt-get install -y libpq-dev
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-install mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo pdo_pgsql
 
 # Get latest Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

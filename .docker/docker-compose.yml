@@ -14,7 +14,7 @@ services:
       - /var/www/${APP_FOLDER}:/var/www/${APP_FOLDER}
       - ./services/php/usr/local/etc/php/conf.d/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - photobox
+      - photobox-network
 
   photobox-nginx:
     image: nginx:alpine
@@ -26,8 +26,24 @@ services:
       - /var/www/${APP_FOLDER}:/var/www/${APP_FOLDER}
       - ./services/nginx/etc/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
-      - photobox
+      - photobox-network
+
+  photobox-postgresql:
+    image: postgres:latest
+    container_name: photobox-postgresql
+    environment:
+      POSTGRES_PASSWORD: masterkey
+      POSTGRES_DB: photobox
+    ports:
+      - "5432:5432"
+    volumes:
+      - photobox-postgresql-dbdata:/var/lib/postgresql/data
+    networks:
+      - photobox-network
 
 networks:
-  photobox:
+  photobox-network:
     driver: bridge
+volumes:
+  photobox-postgresql-dbdata:
+    driver: local
