@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        return Customer::create($request->all());
+        logger(__METHOD__, [$request->all()]);
     }
 
     /**
