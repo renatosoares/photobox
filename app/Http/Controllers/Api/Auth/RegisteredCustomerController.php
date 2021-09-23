@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\Auth\StoreRegisteredCustomerRequest;
 use App\Models\Customer;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 
 class RegisteredCustomerController extends Controller
 {
@@ -20,38 +18,19 @@ class RegisteredCustomerController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(StoreRegisteredCustomerRequest $request)
     {
-        try {
-            $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:customers',
-                'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            ]);
-        } catch (\Illuminate\Validation\ValidationException $validationException) {
-            $erros = collect($validationException->errors())->mapToDictionary(function ($erro, $key) {
-                return  [
-                    'errors' =>
-                    [
-                        "source" => [$key => $erro],
-                        "title" =>  $key,
-                        "detail"  => join(' | ', $erro)
+        $validated = collect($request->safe()->only(['name', 'email', 'password']))
+            ->map(function ($item, $key) {
+                if ($key === 'password') {
+                    $item = Hash::make($item);
+                }
 
-                    ],
-                ];
-            })->toArray();
+                return $item;
+            })
+            ->toArray();
 
-            return response(
-                $erros,
-                422
-            );
-        }
-
-        $customer = Customer::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $customer = Customer::create($validated);
 
         event(new Registered($customer));
 
