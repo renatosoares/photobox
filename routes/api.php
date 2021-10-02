@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Api\Auth\RegisteredCustomerController;
 use App\Http\Controllers\Api\CustomerController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Laravel\Passport\Passport;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Passport::routes();
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::name('auth.')->group(function () {
+Route::prefix('public')->group(function () {
     Route::post(
         '/register',
         [RegisteredCustomerController::class, 'store']
