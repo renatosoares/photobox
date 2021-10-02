@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Api\Auth;
+namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Auth\StoreRegisteredCustomerRequest;
-use App\Models\Customer;
+use App\Http\Requests\Api\Admin\StoreRegisteredUserRequest;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 
-class RegisteredCustomerController extends Controller
+class RegisteredUserController extends Controller
 {
     /**
      * Handle an incoming registration request.
@@ -18,7 +18,7 @@ class RegisteredCustomerController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(StoreRegisteredCustomerRequest $request)
+    public function store(StoreRegisteredUserRequest $request)
     {
         $validated = collect($request->safe()->only(['name', 'email', 'password']))
             ->map(function ($item, $key) {
@@ -30,10 +30,10 @@ class RegisteredCustomerController extends Controller
             })
             ->toArray();
 
-        $customer = Customer::create($validated);
+        $user = User::create($validated);
 
-        event(new Registered($customer));
+        event(new Registered($user));
 
-        return $customer;
+        return $user;
     }
 }

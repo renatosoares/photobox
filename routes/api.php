@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\Auth\RegisteredCustomerController;
+use App\Http\Controllers\Api\RegisteredCustomerController;
+use App\Http\Controllers\Api\Admin\RegisteredUserController;
 use App\Http\Controllers\Api\CustomerController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
@@ -23,6 +24,16 @@ Route::prefix('public')->group(function () {
         [RegisteredCustomerController::class, 'store']
     )
         ->name('register.store');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('public')->name('public.')->group(function () {
+        Route::post(
+            '/register',
+            [RegisteredUserController::class, 'store']
+        )
+            ->name('register.store');
+    });
 });
 
 Route::name('customer.')->group(function () {
