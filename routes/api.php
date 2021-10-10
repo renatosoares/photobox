@@ -38,13 +38,28 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-Route::post('media/upload', function (Request $request) {
-    $user = User::find($request->input('user_id'));
-    $user->addMedia($request->test_file)->toMediaCollection('images');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::name('media.')->group(function () {
+        Route::post('media/store', function (Request $request) {
+            $user = User::find($request->input('user_id'));
+            $media = $user->addMedia($request->test_file)
+                ->withCustomProperties(json_decode($request->custom_properties, true))
+                ->toMediaCollection('images');
 
-    return response()->json([
-        $request->test_file
-    ]);
+            return response()->json([
+                $media,
+            ]);
+        })->name('store');
+
+        Route::get('media', function (Request $request) {
+            /** @var \App\Models\User $user */
+            $user = User::find($request->input('user_id'));
+
+            return response()->json([
+                $user->getMedia('images')->all(),
+            ]);
+        })->name('index');
+    });
 });
 
 Route::name('customer.')->group(function () {
