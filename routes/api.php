@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\RegisteredCustomerController;
 use App\Http\Controllers\Api\Admin\RegisteredUserController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 
@@ -34,6 +36,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         )
             ->name('register.store');
     });
+});
+
+Route::post('media/upload', function (Request $request) {
+    $user = User::find($request->input('user_id'));
+    $user->addMedia($request->test_file)->toMediaCollection('images');
+
+    return response()->json([
+        $request->test_file
+    ]);
 });
 
 Route::name('customer.')->group(function () {
