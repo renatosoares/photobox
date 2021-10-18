@@ -3,9 +3,8 @@
 use App\Http\Controllers\Api\RegisteredCustomerController;
 use App\Http\Controllers\Api\Admin\RegisteredUserController;
 use App\Http\Controllers\Api\CustomerController;
-use App\Models\Customer;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\CustomerMediaController;
+use App\Http\Controllers\Api\MediaController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 
@@ -21,6 +20,29 @@ use Laravel\Passport\Passport;
 */
 Passport::routes();
 
+// #############################################################################
+// ADMIN #######################################################################
+// #############################################################################
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::post(
+        '/register',
+        [RegisteredUserController::class, 'store']
+    )
+        ->name('register.store');
+});
+
+// #############################################################################
+// ADMIN PUBLIC ################################################################
+// #############################################################################
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::prefix('public')->name('public.')->group(function () {
+        // TODO
+    });
+});
+
+// #############################################################################
+// PUBLIC ######################################################################
+// #############################################################################
 Route::prefix('public')->group(function () {
     Route::post(
         '/register',
@@ -29,52 +51,31 @@ Route::prefix('public')->group(function () {
         ->name('register.store');
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::prefix('public')->name('public.')->group(function () {
-        Route::post(
-            '/register',
-            [RegisteredUserController::class, 'store']
-        )
-            ->name('register.store');
-    });
-});
-
+// #############################################################################
+// AUTH ########################################################################
+// #############################################################################
 Route::name('customer.media.')->group(function () {
-    Route::post('customer/media/store', function (Request $request) {
-        $customer = Customer::find($request->input('customer_id'));
-        $media = $customer->addMedia($request->media_file)
-            ->withCustomProperties(json_decode($request->custom_properties, true))
-            ->toMediaCollection('images');
+    Route::post(
+        'customer/{customer}/media',
+        [CustomerMediaController::class, 'store']
+    )->name('store');
 
-        return response()->json([
-            $media,
-        ]);
-    })->name('store');
-
-    Route::get('customer/media', function (Request $request) {
-        /** @var \App\Models\Customer $customer */
-        $customer = Customer::find($request->input('customer_id'));
-
-        return response()->json([
-            $customer->getMedia('images')->all(),
-        ]);
-    })->name('index');
+    Route::get(
+        'customer/{customer}/media',
+        [CustomerMediaController::class, 'index']
+    )->name('index');
 });
 
 Route::name('media.')->group(function () {
+    Route::get(
+        'media',
+        [MediaController::class, 'index']
+    )->name('index');
 
-    Route::get('media', function (Request $request) {
-        return response()->json([
-        ]);
-    })->name('index');
-
-    Route::get('media/{media}', function (Request $request) {
-        return response()->json([
-        ]);
-    })->name('show');
-});
-
-Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get(
+        'media/{media}',
+        [MediaController::class, 'show']
+    )->name('show');
 });
 
 Route::name('customer.')->group(function () {
