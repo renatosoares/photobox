@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Media;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MediaController extends Controller
 {
     public function index(): \Illuminate\Http\Response
     {
-        // FIXME
-        return response(Media::all());
+        return response(DB::table('media')->get());
     }
 
     /**
