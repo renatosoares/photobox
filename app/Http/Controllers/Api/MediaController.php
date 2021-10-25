@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MediaCollection;
+use App\Http\Resources\MediaResource;
 use App\Models\Media;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class MediaController extends Controller
 {
-    public function index(): \Illuminate\Http\Response
+    public function index(): MediaCollection
     {
-        return response(DB::table('media')->get());
+        return new MediaCollection(Media::paginate());
     }
 
     /**
@@ -25,9 +26,9 @@ class MediaController extends Controller
         // TODO
     }
 
-    public function show(Media $media): \Illuminate\Http\Response
+    public function show(Media $media): MediaResource
     {
-        return response($media);
+        return new MediaResource($media);
     }
 
     /**
