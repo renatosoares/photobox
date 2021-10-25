@@ -22,7 +22,7 @@ class MediaResource extends JsonResource
         unset($attributes['model_id']);
 
         return [
-            'type' => 'media',
+            'type' => $this->getTable(),
             'id' => (string) $this->id,
             'attributes' => $attributes,
         ];

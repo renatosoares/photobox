@@ -54,21 +54,9 @@ Route::prefix('public')->group(function () {
 // #############################################################################
 // AUTH ########################################################################
 // #############################################################################
-Route::name('customer.media.')->group(function () {
-    Route::post(
-        'customer/{customer}/media',
-        [CustomerMediaController::class, 'store']
-    )->name('store');
-
-    Route::get(
-        'customer/{customer}/media',
-        [CustomerMediaController::class, 'index']
-    )->name('index');
-});
-
 Route::name('media.')->group(function () {
     Route::get(
-        'media',
+        'media/{customer?}',
         [MediaController::class, 'index']
     )->name('index');
 
@@ -76,6 +64,11 @@ Route::name('media.')->group(function () {
         'media/{media}',
         [MediaController::class, 'show']
     )->name('show');
+
+    Route::post(
+        'media/{customer}',
+        [MediaController::class, 'store']
+    )->name('store');
 });
 
 Route::name('customer.')->group(function () {

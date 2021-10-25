@@ -5,25 +5,35 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MediaCollection;
 use App\Http\Resources\MediaResource;
+use App\Models\Customer;
 use App\Models\Media;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    public function index(): MediaCollection
+    public function index(Request $request, ?Customer $customer = null): \Illuminate\Http\Resources\Json\JsonResource
     {
-        return new MediaCollection(Media::paginate());
+        $media = Media::paginate();
+
+        if ($customer) {
+            $media = $customer
+                ->media()
+                ->where('collection_name', 'images')
+                ->paginate();
+        }
+
+        return new MediaCollection($media);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // TODO
+    public function store(
+        Request $request,
+        Customer $customer
+    ): \Illuminate\Http\Resources\Json\JsonResource {
+        $media = $customer->addMedia($request->media_file)
+            ->withCustomProperties(json_decode($request->custom_properties, true))
+            ->toMediaCollection('images');
+
+        return new MediaResource($media);
     }
 
     public function show(Media $media): MediaResource
