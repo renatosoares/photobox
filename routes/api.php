@@ -63,6 +63,20 @@ Route::name('public.')->prefix('public')->group(function () {
             [MediaController::class, 'show']
         )->name('show');
     });
+
+    Route::name('customer.')->group(function () {
+        Route::get(
+            '/customer',
+            [CustomerController::class, 'index']
+        )
+            ->name('index');
+
+        Route::get(
+            '/customer/{customer}',
+            [CustomerController::class, 'show']
+        )
+            ->name('show');
+    });
 });
 
 // #############################################################################

@@ -3,19 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CustomerCollection;
+use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): \Illuminate\Http\Resources\Json\ResourceCollection
     {
-        //
+        return new CustomerCollection(Customer::paginate());
     }
 
     /**
@@ -26,18 +23,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        logger(__METHOD__, [$request->all()]);
+        // TODO
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Customer $customer)
+    public function show(Customer $customer): \Illuminate\Http\Resources\Json\JsonResource
     {
-        //
+        return new CustomerResource($customer);
     }
 
     /**
@@ -49,7 +40,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        logger(__METHOD__, [$request->all(), $customer]);
     }
 
     /**
