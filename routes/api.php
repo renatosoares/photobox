@@ -23,19 +23,21 @@ Passport::routes();
 // #############################################################################
 // ADMIN #######################################################################
 // #############################################################################
-Route::name('admin.')->prefix('admin')->group(function () {
-    Route::post(
-        '/register',
-        [RegisteredUserController::class, 'store']
-    )
+Route::middleware(['auth:api'])->group(function () {
+    Route::name('admin.')->prefix('admin')->group(function () {
+        Route::post(
+            '/register',
+            [RegisteredUserController::class, 'store']
+        )
         ->name('register.store');
+    });
 });
 
 // #############################################################################
 // ADMIN PUBLIC ################################################################
 // #############################################################################
 Route::name('admin.')->prefix('admin')->group(function () {
-    Route::prefix('public')->name('public.')->group(function () {
+    Route::name('public.')->prefix('public')->group(function () {
         // TODO
     });
 });
@@ -43,38 +45,42 @@ Route::name('admin.')->prefix('admin')->group(function () {
 // #############################################################################
 // PUBLIC ######################################################################
 // #############################################################################
-Route::prefix('public')->group(function () {
+Route::name('public.')->prefix('public')->group(function () {
     Route::post(
         '/register',
         [RegisteredCustomerController::class, 'store']
     )
         ->name('register.store');
+
+    Route::name('media.')->group(function () {
+        Route::get(
+            'media/{customer?}',
+            [MediaController::class, 'index']
+        )->name('index');
+
+        Route::get(
+            'media/{media}',
+            [MediaController::class, 'show']
+        )->name('show');
+    });
 });
 
 // #############################################################################
 // AUTH ########################################################################
 // #############################################################################
-Route::name('media.')->group(function () {
-    Route::get(
-        'media/{customer?}',
-        [MediaController::class, 'index']
-    )->name('index');
+Route::middleware(['auth:api'])->group(function () {
+    Route::name('media.')->group(function () {
+        Route::post(
+            'media/{customer}',
+            [MediaController::class, 'store']
+        )->name('store');
+    });
 
-    Route::get(
-        'media/{media}',
-        [MediaController::class, 'show']
-    )->name('show');
-
-    Route::post(
-        'media/{customer}',
-        [MediaController::class, 'store']
-    )->name('store');
-});
-
-Route::name('customer.')->group(function () {
-    Route::post(
-        '/customer',
-        [CustomerController::class, 'store']
-    )
-        ->name('store');
+    Route::name('customer.')->group(function () {
+        Route::post(
+            '/customer',
+            [CustomerController::class, 'update']
+        )
+            ->name('update');
+    });
 });
