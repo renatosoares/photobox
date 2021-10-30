@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreRegisteredCustomerRequest;
+use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
@@ -34,6 +35,6 @@ class RegisteredCustomerController extends Controller
 
         event(new Registered($customer));
 
-        return $customer;
+        return new CustomerResource($customer);
     }
 }

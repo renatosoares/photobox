@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Admin\RegisteredUserController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\CustomerMediaController;
 use App\Http\Controllers\Api\MediaController;
+use App\Http\Controllers\Api\PublicationController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 
@@ -64,6 +65,18 @@ Route::name('public.')->prefix('public')->group(function () {
         )->name('show');
     });
 
+    Route::name('publication.')->group(function () {
+        Route::get(
+            'publication/{customer?}',
+            [PublicationController::class, 'index']
+        )->name('index');
+
+        Route::get(
+            'publication/{publication}',
+            [PublicationController::class, 'show']
+        )->name('show');
+    });
+
     Route::name('customer.')->group(function () {
         Route::get(
             '/customer',
@@ -87,6 +100,13 @@ Route::middleware(['auth:api'])->group(function () {
         Route::post(
             'media/{customer}',
             [MediaController::class, 'store']
+        )->name('store');
+    });
+
+    Route::name('publication.')->group(function () {
+        Route::post(
+            'publication',
+            [PublicationController::class, 'store']
         )->name('store');
     });
 
