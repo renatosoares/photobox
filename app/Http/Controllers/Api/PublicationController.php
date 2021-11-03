@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StorePublicationRequest;
 use App\Http\Resources\PublicationCollection;
 use App\Http\Resources\PublicationResource;
-use App\Models\Customer;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -23,7 +22,7 @@ class PublicationController extends Controller
 
     public function store(StorePublicationRequest $request): \Illuminate\Http\Resources\Json\JsonResource
     {
-        $validated = $request->safe()->only(['title', 'body', 'publish_at', 'active']);
+        $validated = $request->safe()->only(['title', 'body', 'publish_at', 'active', 'media_id']);
 
         data_fill(
             $validated,
@@ -31,9 +30,8 @@ class PublicationController extends Controller
             Str::slug(data_get($validated, 'title'), '-')
         );
 
-        logger(__METHOD__, [$validated]);
-
         $publication = Publication::create($validated);
+        $publication->publicationable()->associate(auth('customers')->user());
 
         event(new PublicationStoredEvent($publication));
 

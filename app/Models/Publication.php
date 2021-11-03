@@ -36,4 +36,14 @@ class Publication extends Model
         'unpublish_at' => 'datetime',
         'active' => 'boolean',
     ];
+
+    public function publicationable()
+    {
+        return $this->morphTo();
+    }
+
+    public function media()
+    {
+        return $this->hasOne(Media::class);
+    }
 }

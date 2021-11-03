@@ -50,4 +50,9 @@ class Customer extends Authenticatable implements HasMedia
         'email_verified_at' => 'datetime',
         'metadata' => 'json',
     ];
+
+    public function publications()
+    {
+        return $this->morphMany(Publication::class, 'publicationable');
+    }
 }

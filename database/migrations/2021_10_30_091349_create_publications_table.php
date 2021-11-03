@@ -17,6 +17,10 @@ class CreatePublicationsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->index();
+            $table->integer('publicationable_id');
+            $table->string('publicationable_type');
+            $table->unsignedBigInteger('media_id');
+            $table->foreign('media_id')->references('id')->on('media');
             $table->text('body')->nullable();
             $table->boolean('active')->default(true)->index();
             $table->json('metadata')->default('{}');

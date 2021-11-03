@@ -27,6 +27,7 @@ class StorePublicationRequest extends FormRequest
             'title' => ['required', 'unique:publications', 'max:255'],
             'body' => ['nullable'],
             'publish_at' => ['required', 'date'],
+            'media_id' => ['required', 'unique:publications'],
             'active' => ['boolean'],
         ];
     }
