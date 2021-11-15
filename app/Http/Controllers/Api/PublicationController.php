@@ -30,8 +30,15 @@ class PublicationController extends Controller
             Str::slug(data_get($validated, 'title'), '-')
         );
 
+        data_fill(
+            $validated,
+            'user_id',
+            auth()->user()->id
+        );
+
+        logger(__METHOD__, [$validated]);
+
         $publication = Publication::create($validated);
-        $publication->publicationable()->associate(auth('customers')->user());
 
         event(new PublicationStoredEvent($publication));
 

@@ -18,6 +18,8 @@ class Publication extends Model
      */
     protected $fillable = [
         'title',
+        'user_id',
+        'media_id',
         'body',
         'slug',
         'active',
@@ -37,9 +39,9 @@ class Publication extends Model
         'active' => 'boolean',
     ];
 
-    public function publicationable()
+    public function user()
     {
-        return $this->morphTo();
+        return $this->belongsTo(User::class);
     }
 
     public function media()

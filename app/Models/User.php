@@ -46,15 +46,11 @@ class User extends Authenticatable implements HasMedia
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'metadata' => 'json',
     ];
 
-    public function findForPassport($username)
+    public function publications()
     {
-        return $this->where('email', $username)->first();
-    }
-
-    public function validateForPassportPasswordGrant($password)
-    {
-        return Hash::check($password, $this->password);
+        return $this->hasMany(Publication::class);
     }
 }

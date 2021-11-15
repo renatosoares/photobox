@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CustomerCollection;
-use App\Http\Resources\CustomerResource;
-use App\Models\Customer;
+use App\Http\Resources\UserCollection;
+use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class UserController extends Controller
 {
     public function index(): \Illuminate\Http\Resources\Json\ResourceCollection
     {
-        return new CustomerCollection(Customer::paginate());
+        return new UserCollection(User::paginate());
     }
 
     /**
@@ -26,30 +26,30 @@ class CustomerController extends Controller
         // TODO
     }
 
-    public function show(Customer $customer): \Illuminate\Http\Resources\Json\JsonResource
+    public function show(User $user): \Illuminate\Http\Resources\Json\JsonResource
     {
-        return new CustomerResource($customer);
+        return new UserResource($user);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, User $user)
     {
-        logger(__METHOD__, [$request->all(), $customer]);
+        logger(__METHOD__, [$request->all(), $user]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(User $user)
     {
         //
     }
