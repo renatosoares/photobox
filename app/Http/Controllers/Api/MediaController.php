@@ -5,22 +5,14 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MediaCollection;
 use App\Http\Resources\MediaResource;
-use App\Models\User;
 use App\Models\Media;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    public function index(Request $request, ?User $user = null): \Illuminate\Http\Resources\Json\JsonResource
+    public function index(Request $request): \Illuminate\Http\Resources\Json\ResourceCollection
     {
         $media = Media::paginate();
-
-        if ($user) {
-            $media = $user
-                ->media()
-                ->where('collection_name', 'images')
-                ->paginate();
-        }
 
         return new MediaCollection($media);
     }

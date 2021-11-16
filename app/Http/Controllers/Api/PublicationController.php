@@ -36,8 +36,6 @@ class PublicationController extends Controller
             auth()->user()->id
         );
 
-        logger(__METHOD__, [$validated]);
-
         $publication = Publication::create($validated);
 
         event(new PublicationStoredEvent($publication));
@@ -45,7 +43,7 @@ class PublicationController extends Controller
         return new PublicationResource($publication);
     }
 
-    public function show(Publication $publication): \Illuminate\Http\Resources\Json\JsonResource
+    public function show(Request $request, Publication $publication): \Illuminate\Http\Resources\Json\JsonResource
     {
         return new PublicationResource($publication);
     }

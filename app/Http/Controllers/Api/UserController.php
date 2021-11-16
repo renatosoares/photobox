@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MediaCollection;
+use App\Http\Resources\PublicationCollection;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -52,5 +54,22 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    public function mediaIndex(Request $request, User $user): \Illuminate\Http\Resources\Json\ResourceCollection
+    {
+        $media = $user
+            ->media()
+            ->where('collection_name', 'images')
+            ->paginate();
+
+        return new MediaCollection($media);
+    }
+
+    public function publicationIndex(Request $request, User $user): \Illuminate\Http\Resources\Json\ResourceCollection
+    {
+        $publications = $user->publications()->paginate();
+
+        return new PublicationCollection($publications);
     }
 }

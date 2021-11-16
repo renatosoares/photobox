@@ -49,7 +49,7 @@ Route::name('public.')->prefix('public')->group(function () {
 
     Route::name('media.')->group(function () {
         Route::get(
-            'media/{user?}',
+            'media',
             [MediaController::class, 'index']
         )->name('index');
 
@@ -61,7 +61,7 @@ Route::name('public.')->prefix('public')->group(function () {
 
     Route::name('publication.')->group(function () {
         Route::get(
-            'publication/{user?}',
+            'publication',
             [PublicationController::class, 'index']
         )->name('index');
 
@@ -83,6 +83,18 @@ Route::name('public.')->prefix('public')->group(function () {
             [UserController::class, 'show']
         )
             ->name('show');
+
+        Route::get(
+            '/user/{user}/media',
+            [UserController::class, 'mediaIndex']
+        )
+            ->name('media.index');
+
+        Route::get(
+            '/user/{user}/publication',
+            [UserController::class, 'publicationIndex']
+        )
+            ->name('publication.index');
     });
 });
 
@@ -106,7 +118,7 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::name('user.')->group(function () {
         Route::post(
-            '/user',
+            '/user/{user}',
             [UserController::class, 'update']
         )
             ->name('update');
