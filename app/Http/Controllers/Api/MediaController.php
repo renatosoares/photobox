@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\StoreMediaRequest;
 use App\Http\Resources\MediaCollection;
 use App\Http\Resources\MediaResource;
 use App\Models\Media;
@@ -17,13 +18,13 @@ class MediaController extends Controller
         return new MediaCollection($media);
     }
 
-    public function store(Request $request): \Illuminate\Http\Resources\Json\JsonResource
+    public function store(StoreMediaRequest $request): \Illuminate\Http\Resources\Json\JsonResource
     {
         /** @var \App\Models\User $user */
         $user = auth()->user();
 
         $media = $user->addMedia($request->media_file)
-            ->withCustomProperties(json_decode($request->custom_properties, true))
+            ->withCustomProperties($request->custom_properties)
             ->toMediaCollection('images');
 
         return new MediaResource($media);
