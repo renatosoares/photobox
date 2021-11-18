@@ -66,7 +66,7 @@ Route::name('public.')->prefix('public')->group(function () {
         )->name('index');
 
         Route::get(
-            'publication/{publication}',
+            'publication/{publication:slug}',
             [PublicationController::class, 'show']
         )->name('show');
     });
