@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\RegisteredCustomerController;
-use App\Http\Controllers\Api\Admin\RegisteredUserController;
-use App\Http\Controllers\Api\CustomerController;
-use App\Http\Controllers\Api\CustomerMediaController;
+use App\Http\Controllers\Api\RegisteredUserController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\MediaController;
+use App\Http\Controllers\Api\PublicationController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 
@@ -25,11 +24,7 @@ Passport::routes();
 // #############################################################################
 Route::middleware(['auth:api'])->group(function () {
     Route::name('admin.')->prefix('admin')->group(function () {
-        Route::post(
-            '/register',
-            [RegisteredUserController::class, 'store']
-        )
-        ->name('register.store');
+        // TODO
     });
 });
 
@@ -48,13 +43,13 @@ Route::name('admin.')->prefix('admin')->group(function () {
 Route::name('public.')->prefix('public')->group(function () {
     Route::post(
         '/register',
-        [RegisteredCustomerController::class, 'store']
+        [RegisteredUserController::class, 'store']
     )
         ->name('register.store');
 
     Route::name('media.')->group(function () {
         Route::get(
-            'media/{customer?}',
+            'media',
             [MediaController::class, 'index']
         )->name('index');
 
@@ -64,18 +59,42 @@ Route::name('public.')->prefix('public')->group(function () {
         )->name('show');
     });
 
-    Route::name('customer.')->group(function () {
+    Route::name('publication.')->group(function () {
         Route::get(
-            '/customer',
-            [CustomerController::class, 'index']
+            'publication',
+            [PublicationController::class, 'index']
+        )->name('index');
+
+        Route::get(
+            'publication/{publication:slug}',
+            [PublicationController::class, 'show']
+        )->name('show');
+    });
+
+    Route::name('user.')->group(function () {
+        Route::get(
+            '/user',
+            [UserController::class, 'index']
         )
             ->name('index');
 
         Route::get(
-            '/customer/{customer}',
-            [CustomerController::class, 'show']
+            '/user/{user}',
+            [UserController::class, 'show']
         )
             ->name('show');
+
+        Route::get(
+            '/user/{user}/media',
+            [UserController::class, 'mediaIndex']
+        )
+            ->name('media.index');
+
+        Route::get(
+            '/user/{user}/publication',
+            [UserController::class, 'publicationIndex']
+        )
+            ->name('publication.index');
     });
 });
 
@@ -85,15 +104,22 @@ Route::name('public.')->prefix('public')->group(function () {
 Route::middleware(['auth:api'])->group(function () {
     Route::name('media.')->group(function () {
         Route::post(
-            'media/{customer}',
+            'media',
             [MediaController::class, 'store']
         )->name('store');
     });
 
-    Route::name('customer.')->group(function () {
+    Route::name('publication.')->group(function () {
         Route::post(
-            '/customer',
-            [CustomerController::class, 'update']
+            'publication',
+            [PublicationController::class, 'store']
+        )->name('store');
+    });
+
+    Route::name('user.')->group(function () {
+        Route::post(
+            '/user/{user}',
+            [UserController::class, 'update']
         )
             ->name('update');
     });

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Admin\StoreRegisteredUserRequest;
+use App\Http\Requests\Api\StoreRegisteredUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
@@ -34,6 +35,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return $user;
+        return new UserResource($user);
     }
 }

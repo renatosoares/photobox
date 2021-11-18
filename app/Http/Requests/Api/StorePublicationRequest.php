@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\Admin;
+namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules;
 
-class StoreRegisteredUserRequest extends FormRequest
+class StorePublicationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +24,11 @@ class StoreRegisteredUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:customers',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'title' => ['required', 'unique:publications', 'max:255'],
+            'body' => ['nullable'],
+            'publish_at' => ['required', 'date'],
+            'media_id' => ['required', 'unique:publications'],
+            'active' => ['boolean'],
         ];
     }
 }
