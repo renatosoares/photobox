@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/renatosoares/photobox/commits/Unreleased) - 2021-00-00
 
+## [0.2.0](https://github.com/renatosoares/photobox/commits/0.2.0) - 2021-11-18
+
+### Added
+- Initial routes for publication.
+
 ## [0.1.0](https://github.com/renatosoares/photobox/commits/0.1.0) - 2021-10-26
 
 ### Added
