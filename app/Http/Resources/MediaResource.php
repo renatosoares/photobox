@@ -20,6 +20,10 @@ class MediaResource extends JsonResource
 
         unset($attributes['model_type']);
         unset($attributes['model_id']);
+        unset($attributes['disk']);
+        unset($attributes['conversions_disk']);
+
+        data_fill($attributes, 'full_url', $this->getFullUrl());
 
         return [
             'type' => $this->getTable(),
