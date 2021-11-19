@@ -104,6 +104,6 @@ class Media extends BaseMedia
 
     public function publication()
     {
-        return $this->belongsTo(Publication::class);
+        return $this->hasOne(Publication::class);
     }
 }
