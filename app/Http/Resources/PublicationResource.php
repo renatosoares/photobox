@@ -16,6 +16,10 @@ class PublicationResource extends JsonResource
     {
         /** @var \App\Models\Media $media */
         $media = $this->media;
+
+        /** @var \App\Models\User $user */
+        $user = $this->user;
+
         $attributes = $this->attributesToArray();
 
         unset($attributes['user_id']);
@@ -28,6 +32,9 @@ class PublicationResource extends JsonResource
             'relationships' => [
                 $media->getTable() => [
                     'data' => new MediaResource($media),
+                ],
+                $user->getTable() => [
+                    'data' => new UserResource($user),
                 ],
             ],
         ];
