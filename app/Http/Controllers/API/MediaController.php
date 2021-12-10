@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\StoreMediaRequest;
+use App\Http\Requests\API\StoreMediaRequest;
 use App\Http\Resources\MediaCollection;
 use App\Http\Resources\MediaResource;
 use App\Models\Media;

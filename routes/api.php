@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\Api\RegisteredUserController;
-use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\MediaController;
-use App\Http\Controllers\Api\PublicationController;
+use App\Http\Controllers\API\Collective\MediaController as CollectiveMediaController;
+use App\Http\Controllers\API\Collective\PublicationController as CollectivePublicationController;
+use App\Http\Controllers\API\Collective\RegisteredUserController;
+use App\Http\Controllers\API\Collective\UserController as CollectiveUserController;
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\MediaController;
+use App\Http\Controllers\API\PublicationController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 
@@ -32,7 +35,7 @@ Route::middleware(['auth:api'])->group(function () {
 // ADMIN PUBLIC ################################################################
 // #############################################################################
 Route::name('admin.')->prefix('admin')->group(function () {
-    Route::name('public.')->prefix('public')->group(function () {
+    Route::name('collective.')->prefix('collective')->group(function () {
         // TODO
     });
 });
@@ -40,7 +43,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
 // #############################################################################
 // PUBLIC ######################################################################
 // #############################################################################
-Route::name('public.')->prefix('public')->group(function () {
+Route::name('collective.')->prefix('collective')->group(function () {
     Route::post(
         '/register',
         [RegisteredUserController::class, 'store']
@@ -50,49 +53,49 @@ Route::name('public.')->prefix('public')->group(function () {
     Route::name('media.')->group(function () {
         Route::get(
             'media',
-            [MediaController::class, 'index']
+            [CollectiveMediaController::class, 'index']
         )->name('index');
 
         Route::get(
             'media/{media}',
-            [MediaController::class, 'show']
+            [CollectiveMediaController::class, 'show']
         )->name('show');
     });
 
     Route::name('publication.')->group(function () {
         Route::get(
             'publication',
-            [PublicationController::class, 'index']
+            [CollectivePublicationController::class, 'index']
         )->name('index');
 
         Route::get(
             'publication/{publication:slug}',
-            [PublicationController::class, 'show']
+            [CollectivePublicationController::class, 'show']
         )->name('show');
     });
 
     Route::name('user.')->group(function () {
         Route::get(
             '/user',
-            [UserController::class, 'index']
+            [CollectiveUserController::class, 'index']
         )
             ->name('index');
 
         Route::get(
             '/user/{user}',
-            [UserController::class, 'show']
+            [CollectiveUserController::class, 'show']
         )
             ->name('show');
 
         Route::get(
             '/user/{user}/media',
-            [UserController::class, 'mediaIndex']
+            [CollectiveUserController::class, 'mediaIndex']
         )
             ->name('media.index');
 
         Route::get(
             '/user/{user}/publication',
-            [UserController::class, 'publicationIndex']
+            [CollectiveUserController::class, 'publicationIndex']
         )
             ->name('publication.index');
     });
@@ -122,5 +125,10 @@ Route::middleware(['auth:api'])->group(function () {
             [UserController::class, 'update']
         )
             ->name('update');
+
+        Route::get(
+            '/user/{user:email}',
+            [UserController::class, 'show']
+        )->name('show');
     });
 });
