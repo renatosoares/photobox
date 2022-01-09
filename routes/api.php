@@ -127,7 +127,7 @@ Route::middleware(['auth:api'])->group(function () {
             ->name('update');
 
         Route::get(
-            '/user/{user:email}',
+            '/user',
             [UserController::class, 'show']
         )->name('show');
     });

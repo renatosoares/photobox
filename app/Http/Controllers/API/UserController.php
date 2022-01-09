@@ -28,9 +28,9 @@ class UserController extends Controller
         // TODO
     }
 
-    public function show(User $user): \Illuminate\Http\Resources\Json\JsonResource
+    public function show(): \Illuminate\Http\Resources\Json\JsonResource
     {
-        return new UserResource($user);
+        return new UserResource(auth('api')->user());
     }
 
     /**
