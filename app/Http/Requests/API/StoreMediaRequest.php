@@ -35,7 +35,8 @@ class StoreMediaRequest extends FormRequest
             'custom_properties.description' => ['required', 'max:255', 'string'],
             'custom_properties.keywords' => ['required', 'array'],
             'custom_properties.title' => ['required', 'max:255', 'string'],
-            'media_file' => ['required', 'file'],
+            'media_files.*' => ['file'],
+            'media_files' => ['required'],
         ];
     }
 }

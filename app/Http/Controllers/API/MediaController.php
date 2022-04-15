@@ -23,9 +23,12 @@ class MediaController extends Controller
         /** @var \App\Models\User $user */
         $user = auth()->user();
 
-        $media = $user->addMedia($request->media_file)
-            ->withCustomProperties($request->custom_properties)
-            ->toMediaCollection('images');
+        /** @var \Illuminate\Http\UploadedFile $file */
+        foreach ($request->file('media_files') as $file) {
+            $media = $user->addMedia($file)
+                ->withCustomProperties($request->custom_properties)
+                ->toMediaCollection('images');
+        }
 
         return new MediaResource($media);
     }

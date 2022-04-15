@@ -44,6 +44,13 @@ Route::name('admin.')->prefix('admin')->group(function () {
 // PUBLIC ######################################################################
 // #############################################################################
 Route::name('collective.')->prefix('collective')->group(function () {
+    Route::get(
+        '/phpinfo',
+        function () {
+            phpinfo();
+        }
+    );
+
     Route::post(
         '/register',
         [RegisteredUserController::class, 'store']
