@@ -107,6 +107,12 @@ Route::middleware(['auth:api'])->group(function () {
             'media',
             [MediaController::class, 'store']
         )->name('store');
+
+
+        Route::get(
+            'media',
+            [MediaController::class, 'index']
+        )->name('index');
     });
 
     Route::name('publication.')->group(function () {
