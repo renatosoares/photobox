@@ -13,7 +13,10 @@ class MediaController extends Controller
 {
     public function index(Request $request): \Illuminate\Http\Resources\Json\ResourceCollection
     {
-        $media = Media::paginate();
+        /** @var \App\Models\User $user */
+        $user = auth()->user();
+
+        $media = $user->getMedia('images');
 
         return new MediaCollection($media);
     }
